@@ -10,22 +10,12 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
 
-		to your new<br />SvelteKit app
-	</h1>
 
 	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
+		<p>歩道の除雪状況は<a href="https://www.city.kitami.lg.jp/administration/disaster/detail.php?content=8435">こちら</a>から</p>
 	</h2>
 
-	<Counter />
 </section>
 
 <style>

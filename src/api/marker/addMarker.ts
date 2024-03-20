@@ -4,10 +4,6 @@ import { uploadLatitude, uploadLongitude } from '../store';
 import Modal from '../../component/modal/index.svelte';
 import { openModal } from 'svelte-modals';
 
-const handleUpload = (position) => {
-	console.log(position);
-};
-
 const handleOpen = () => {
 	backfaceFixed(true);
 	openModal(Modal);
@@ -34,8 +30,9 @@ export const addMarker = (
 	// });
 	createMarker.addListener('click', () => {
 		const latitude = createMarker.getPosition();
-		uploadLatitude.set(latitude?.lat);
-		uploadLongitude.set(latitude?.lng);
+		console.log(latitude?.lat());
+		uploadLatitude.set(latitude?.lat());
+		uploadLongitude.set(latitude?.lng());
 		if (latitude !== undefined && latitude !== null) {
 			map.panTo(latitude);
 		}

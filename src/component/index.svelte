@@ -4,6 +4,7 @@
 	import { putMarker } from "../api/marker/putMarker";
 	import { getSurvey } from "../api/getSurvey";
   
+  
   let googleMap: google.maps.Map;
   let markers: google.maps.Marker[] = [];
 
@@ -24,7 +25,6 @@
 </script>
 
 <div id="map" />
-<div>test</div>
 
 
 <style>

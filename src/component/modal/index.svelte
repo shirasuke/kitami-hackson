@@ -1,22 +1,25 @@
 <script lang="ts">
+	import { uploadLatitude, uploadLongitude } from "../../api/store";
 	import { handleCloseModal } from "../../shared/modal/handleCloseModal";
 
 
   export let isOpen: boolean;
  //export let survey: RegularSurvey;
+ 
 
   const callback = async () => {
     //await refetch();
     handleCloseModal;
   };
   const handleUpload = async()=>{
-    console.log("test")
     try {
       const requestBody = {
-        latitude:143
+        latitude:$uploadLatitude.toString(),
+        longitude:$uploadLongitude.toString(),
+        user_id:1
       };
 
-      const response = await fetch('http://localhost:8000/snow_new_post',{
+      const response = await fetch('http://localhost:8000/snow/new_post',{
         method:"POST",
         headers:{
           'Content-Type': 'application/json'
@@ -25,6 +28,7 @@
       });
       const data = await response.json();
       console.log(data);
+      handleCloseModal();
     } catch (error) {
     console.error('Error sending request:', error);
   }
