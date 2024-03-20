@@ -3,7 +3,6 @@ import { addMarker } from './addMarker';
 import welcome_fallback from '$lib/images/svelte-welcome.png';
 
 export const putMarker = (position, map: google.maps.Map) => {
-	console.log(position);
 	const markerPosition = new google.maps.LatLng(position[0], position[1]);
 
 	const marker = new google.maps.Marker({

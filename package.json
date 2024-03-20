@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@googlemaps/js-api-loader": "^1.16.6",
 		"@types/node-fetch": "^2.6.11",
+		"felte": "^1.2.14",
 		"node-fetch": "^3.3.2"
 	}
 }
