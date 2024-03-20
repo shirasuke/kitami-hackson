@@ -14,7 +14,7 @@
 	<Modal />
 
 	<footer>
-		<p>YUKIDOKE</p>
+		<p class="title">~YUKIDOKE~</p>
 	</footer>
 </div>
 
@@ -44,8 +44,11 @@
 		padding: 12px;
 	}
 
-	footer a {
+	footer p {
 		font-weight: bold;
+		font-family: 'Zen Kaku Gothic Antique', 'serif';
+		font-size: 24px;
+		color: #0088ff;
 	}
 
 	@media (min-width: 480px) {
