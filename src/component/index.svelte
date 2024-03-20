@@ -2,19 +2,24 @@
 	import { createMap } from "../api/googleMap/createMap";
 	import { onMount } from "svelte";
 	import { putMarker } from "../api/marker/putMarker";
+	import { getSurvey } from "../api/getSurvey";
   
   let googleMap: google.maps.Map;
+  let markers: google.maps.Marker[] = [];
+
   onMount(async () => {
     //const org = getOrgAndId();
     googleMap = await createMap({
-      centerLatitude: Number(42),
-      centerLongitude: Number(143),
+      centerLatitude: Number(43.80494),
+      centerLongitude: Number(143.893786),
     });
-    initialData();
+    await initialData();
   });
 
-  const initialData = ()=>{
-    putMarker(42, 143, googleMap)
+  const initialData =async ()=>{
+    const vs = await getSurvey()
+    console.log(vs)
+    markers = vs.map((v)=>putMarker(v, googleMap))
   }
 </script>
 
